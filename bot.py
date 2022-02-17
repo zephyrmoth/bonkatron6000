@@ -23,7 +23,7 @@ class BonkatronClient(discord.Client):
             bonkable = False
             #This is almost certainly not super efficient but this is entirely a goof
             for string in self.bonkable_list[user_id]["strings"]:
-                if string in message.content:
+                if string.lower() in message.content.lower():
                     bonkable = True
                     break
             if bonkable:
